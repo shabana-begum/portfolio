@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeelan | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-box">
+      <img src="https://i.postimg.cc/ZnSpYH4W/profile.png" class="profile-img" alt="profile">
+
+      <h1>Hello, I'm <span class="highlight">Jeelan</span></h1>
+      <h3 class="typing"></h3>
+
+      <div class="social">
+        <a href="#"><span class="material-icons-outlined">mail</span></a>
+        <a href="#"><span class="material-icons-outlined">code</span></a>
+        <a href="#"><span class="material-icons-outlined">public</span></a>
+      </div>
+
+      <a href="#projects" class="btn">Explore Projects</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="box" id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate developer, always learning and improving. I enjoy coding, 
+      solving real-world problems, and building smart digital solutions.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="box" id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill">
+      <span>Python</span>
+      <div class="bar"><div style="width: 85%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>HTML & CSS</span>
+      <div class="bar"><div style="width: 90%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>SQL</span>
+      <div class="bar"><div style="width: 70%;"></div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="box" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3>Smart Water Management System</h3>
+      <p>Uses IoT concepts to reduce water wastage and automate usage.</p>
+    </div>
+ <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio built using HTML, CSS and JavaScript.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Contact: <a href="mailto:jeelanqwer@gmail.com">jeelanqwer@gmail.com</a></p>
+    <p>© 2025 | Designed by Jeelan</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const text = ["Aspiring Developer", "Problem Solver", "Coder"];
+    let index = 0;
+    let charIndex = 0;
+
+    function typeWriter() {
+      let typingElement = document.querySelector(".typing");
+      if (charIndex < text[index].length) {
+        typingElement.innerHTML += text[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 100);
+      } else {
+        setTimeout(() => {
+          typingElement.innerHTML = "";
+          charIndex = 0;
+          index = (index + 1) % text.length;
+          typeWriter();
+        }, 1200);
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
+</html>
